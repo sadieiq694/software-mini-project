@@ -7,3 +7,22 @@ const functions = require('firebase-functions');
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+
+console.log("js file test")
+
+function tabulateAnswers() {
+    var yesScore = 0;
+    var noScore = 0; 
+
+    var choices = document.getElementsByTagName('input');
+    console.log(choices.length)
+
+    for(i=0; i < choices.length; i++) { // i think choices.length is 8
+        // if the radio button is checked
+        if(choices[i].checked) {
+            if(choices[i].value == 'yes') {
+
+            }
+        }
+    }
+}
