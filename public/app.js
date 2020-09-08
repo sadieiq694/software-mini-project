@@ -10,7 +10,7 @@ function googleLogin(){
 	firebase.auth().signInWithPopup(provider)
 	
 	.then(result => {
-		window.location.assign("symptoms.html");
+		window.location.assign("home.html");
 	//	const user = result.user;
 	//	document.write('Hello ' + user.displayName);
 	//	console.log(user)

@@ -31,92 +31,16 @@
     </style>
   </head>
   <body>
-    <h1>COVID-19 Symptom Survey</h1>
+    <h1>COVID-19 Dashboard (updated2)</h1>
 
-    <div id="wrapper">
-      <p>Please indicate if you are experiencing any of the following symptoms:</h2>
+    <A HREF="survey.html">Take Daily Symptom Survey</A>
 
-      <form id="quiz">
-        <!--Question 1-->
-        <h2>Fever of 100F, or feeling unusually hot (if no thermometer available) accompanied by shivering or chills</h2>
-        <!-- Here are the choices for the first question. Each input tag must have the same name. For this question, the name is q1. -->
-        <!-- The value is which answer the choice corresponds to. -->
-        <label><input type="radio" name="q1" value="yes">
-          yes
-        </label><br />
-        <label><input type="radio" name="q1" value="no">
-          no
-        </label><br />
+    <form name="myform" action="" method="GET">Enter Data:</form>
+    <input type="text" name="inputbox" value="">
+    <input type="button" name="button" value="Click" onClick="saveData(this.form)">
+    </form>
 
-        <!--Question 2-->
-        <h2>New cough not related to chronic condition</h2>
-        <label><input type="radio" name="q1" value="yes">
-          yes
-        </label><br />
-        <label><input type="radio" name="q1" value="no">
-          no
-        </label><br />
-
-        <!--Question 3-->
-        <h2>Difficulty breathing, shortness of breath</h2>
-        <label><input type="radio" name="q1" value="yes">
-          yes
-        </label><br />
-        <label><input type="radio" name="q1" value="no">
-          no
-        </label><br />
-
-        <!--Question 4-->
-        <h2>Sore throat</h2>
-        <label><input type="radio" name="q1" value="yes">
-          yes
-        </label><br />
-        <label><input type="radio" name="q1" value="no">
-          no
-        </label><br />
-
-        <!--Question 5-->
-        <h2>New loss of taste or smell</h2>
-        <label><input type="radio" name="q1" value="yes">
-          yes
-        </label><br />
-        <label><input type="radio" name="q1" value="no">
-          no
-        </label><br />
-
-        <!--Question 6-->
-        <h2>Vomiting</h2>
-        <label><input type="radio" name="q1" value="yes">
-          yes
-        </label><br />
-        <label><input type="radio" name="q1" value="no">
-          no
-        </label><br />
-
-        <!--Question 7-->
-        <h2>Severe fatigue</h2>
-        <label><input type="radio" name="q1" value="yes">
-          yes
-        </label><br />
-        <label><input type="radio" name="q1" value="no">
-          no
-        </label><br />
-
-         <!--Question 8-->
-         <h2>Severe muscle aches</h2>
-         <label><input type="radio" name="q1" value="yes">
-           yes
-         </label><br />
-         <label><input type="radio" name="q1" value="no">
-           no
-         </label><br />
-
-        <button type="submit" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
-        <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
-
-      </form>
-    </div>
-
+    <script type="text/javascript" src="func.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥

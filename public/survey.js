@@ -1,5 +1,3 @@
-const functions = require('firebase-functions');
-
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
@@ -8,7 +6,9 @@ const functions = require('firebase-functions');
 //   response.send("Hello from Firebase!");
 // });
 
-console.log("js file test")
+// Need to add:
+//  - refuse to submit if user does not answer every question
+//  - save data to firebase database when "submit" button is clicked!
 
 function tabulateAnswers() {
     var yesScore = 0;
