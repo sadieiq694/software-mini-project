@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", event => {
 
     const userRef = db.collection('users');
 
-    const query = userRef.where('num_symptoms', '>', 2)
+    //const query = userRef.where('num_symptoms', '>', 2)
 
-    query.get()
+    userRef.get()
         .then(users => {
             users.forEach(doc => {
                 data = doc.data()
-                document.write(`${data.date} at ${data.num_symptoms} <br>`)
+                document.write(`${data.name} <br>`)
             })
         })
 })
