@@ -27,23 +27,18 @@
 		background-color: powderblue;
 		font-size : 50px;
 					
-			
-		
-
 	}
-
-	
 
 </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Covid Attestation Login</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/7.19.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/7.19.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.19.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.19.1/firebase-firestore.js"></script>
     <script defer src="/__/firebase/7.19.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/7.19.1/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
@@ -52,13 +47,13 @@
   </head>
   <body>
 	
-	  <div class = "rectangle">
-		  Please Sign In With Google to Start
-    <script src = "app.js">
-	 </script>
-	 <button class ="login"  onclick = "googleLogin()">
-		 Login With Google
-	 </button>
-	  </div>
+	<div class = "rectangle">
+		Please Sign In With Google to Start
+		<script src = "scripts/app.js"></script>
+		
+		<button class ="login"  onclick = "googleLogin()">
+			Login With Google
+		</button>
+	</div>
   </body>
 </html>

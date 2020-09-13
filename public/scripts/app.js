@@ -1,3 +1,4 @@
+// LOGIN, GOES WITH index.html
 document.addEventListener("DOMContentLoaded", event => {
 	
 	const app = firebase.app();

@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <h1>You linked to a new page! noice :)</h1>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Symptom Survey</title>
+        
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/7.20.0/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/7.20.0/firebase-auth.js"></script>
+        <script defer src="/__/firebase/7.20.0/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/7.20.0/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/7.20.0/firebase-storage.js"></script>
+        <!-- initialize the SDK after all desired features are loaded -->
+        <script defer src="/__/firebase/init.js"></script>
+    </head>
     <body>
         <h1>COVID-19 Symptom Survey</h1>
-        <script type="text/javascript" src="survey.js"></script>
+        <script type="text/javascript" src="scripts/survey.js"></script>
 
         <div id="wrapper">
             <p>Please indicate if you are experiencing any of the following symptoms:</h2>
@@ -51,11 +66,14 @@
                 <label><input type="radio" name="q8" value="yes">yes</label><br />
                 <label><input type="radio" name="q8" value="no">no</label><br />
 
-                <button type="submit" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
-                <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
-
             </form>
+
+        <button id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
+        <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
+
         </div>
+
+        <p id="changeWhenDone"></p>
 
         <A HREF="index.html">Return to dashboard</A>
     </body>

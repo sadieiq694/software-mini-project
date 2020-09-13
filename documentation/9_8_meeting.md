@@ -2,16 +2,28 @@
 
 ## Progress updates
 * **Sadie**
-    * deployed basic application using Firebase
-    * have survey with symptom questions, need to now store this data in a database
+    * Deployed basic application using Firebase
+    * Have survey with symptom questions, need to now store this data in a database
 * **Hazim**
-    * 
+    * Successfully deployed SSO through Google
 
-## To do
+## Agenda
 * Integrate individual work (SSO login and symptom survey) into web application
 * Assign new tasks
 * Schedule next meeting, set goals for that meeting
+* Discuss:
+    * Project directory organization (issues with moving .js files into functions directory)
+    * Setting up firebase database
 
-## To discuss
-* Project directory organization (issues with moving .js files into functions directory)
-* Setting up the firebase database
+## Discussion
+
+## Accomplished during meeting:
+* Individual work successfully integrated
+
+## Next steps
+* Database
+* COVID data
+
+* Later: admin dashboard
+
+* user dashboard to see status

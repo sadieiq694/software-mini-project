@@ -19,7 +19,7 @@
     * Notify if "dangerous" number of symptoms? 
     * separate accounts lead to separate symptom tracker, dashboard, etc.
     * ensure that an individual user can only fill out their survey once a day
-* Dashboard to monitor symptoms
+* dashboard to monitor symptoms
     * symptom history
 * COVID statistics and data displayed from outside sources https://covid19api.com/
     * likely will live on the dashboard
