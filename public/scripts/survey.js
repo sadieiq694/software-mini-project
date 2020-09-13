@@ -96,7 +96,7 @@ function tabulateAnswers() {
                         //userRef.update({test_results: cur_results})
                     } else {
                         console.log("DOC DOES NOT EXIST!!")
-                        userRef.set({name: user.displayName}) //, test_results: [cur_results]})
+                        userRef.set({name: user.displayName, email: user.email, id: user.uid}) //, test_results: [cur_results]})
                         userRef.collection('testResults').add(cur_results)
                     }
                 });
