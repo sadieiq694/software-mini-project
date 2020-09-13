@@ -12,10 +12,21 @@ function googleLogin(){
 	
 	.then(result => {
 		window.location.assign("home.html");
-	//	const user = result.user;
+		const user = result.user;
+		var user1 = firebase.auth().currentUser;
+        console.log(user1.displayName)
 	//	document.write('Hello ' + user.displayName);
 	//	console.log(user)
 	})
-
 	.catch(console.log)
+
+	/*var user = firebase.auth().currentUser;
+
+    if(user) {
+        console.log("A user is signed in!!")
+        console.log(user)
+        console.log(user.displayName)
+    } else {
+		console.log("No user signed in")
+	}*/
 }
