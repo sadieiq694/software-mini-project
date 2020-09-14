@@ -34,25 +34,29 @@ var config = {
   url: 'https://api.covid19api.com/live/country/usa/status/confirmed',
   headers: { }
 };
+var list = null;
 
-var mass =  axios(config)
+ axios(config)
 .then(function (response) {
-        console.log(response.data);
-//	var list = JSON.parse(response.data);
-		
+        list = response.data[119];
+	console.log(list.Country);
+	//i managed to get Mass. data onto the console log
+	//but I dont know how to print it out onto the webpage
+			
 })
 .catch(function (error) {
   console.log(error);
 });
-
-//var list = JSON.parse();
-return (
-//	var obj = JSON.parse({"Country":"United States of America","CountryCode":"US","Province":"Michigan","City":"","CityCode":"","Lat":"43.33","Lon":"-84.54","Confirmed":24244,"Deaths":1479,"Recovered":0,"Active":22765,"Date":"2020-04-13T00:00:00Z"});
+return(
 	<div>
-	This is the data 
-	</div>
+		This data : 
+	</div> 
 )
+
 }	
+
+
+
 
 export default Product
 
