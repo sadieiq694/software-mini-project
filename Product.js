@@ -1,32 +1,7 @@
 import React, {useState, useEffect} from 'react'
-//import axios from 'axios'
+//import App from './App'
 function Product(){
-//	const url = 'https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/'
-//	const [product, setProduct] = useState(null)
-//	useEffect(() => {
-//		axios.get(url)
-//              .then(response => {
-//                      setProduct(response.data)
-//                })
-	
-//	}, [url])
-	
-//	if(product){
-//		return(
-//		<div>
-//			<h1>{product.name}</h1>
-//			</div>
-		
-//		)
 
-//	}
-
-		
-//	return(
-//	<div>
-//		nothing
-//		</div>
-//	)
 var axios = require('axios');
 
 var config = {
@@ -42,7 +17,20 @@ var list = null;
 	console.log(list.Country);
 	//i managed to get Mass. data onto the console log
 	//but I dont know how to print it out onto the webpage
-			
+	var country = document.getElementById("country");
+	var confirmed = document.getElementById("confirmed");
+	var deaths = document.getElementById("deaths");
+	var province = document.getElementById("recovered");
+	var recovered = document.getElementById("recovered");
+	var active = document.getElementById("active");
+	country.innerHTML = 'Country: ' + list.Country;
+	confirmed.innerHTML = 'Confirmed Cases: ' + list.Confirmed;
+	deaths.innerHTML = 'Deaths: ' + list.Deaths;
+	province.innerHTML = 'State: ' + list.Province;
+	recovered.innerHTML = 'Recovered: ' + list.Recovered;
+	active.innerHTML = 'Active Cases: ' + list.Active;
+
+	
 })
 .catch(function (error) {
   console.log(error);
