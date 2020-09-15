@@ -11,13 +11,14 @@ document.addEventListener("DOMContentLoaded", event => {
     const userDetails = document.querySelector("#userDetails")
 
     console.log(userDetails)
+    userDetails.innerHTML = `<h2>Symptom Survey Results<h2>`
 
     userRef.get()
         .then(users => {
             users.forEach(doc => {
                 data = doc.data()
                 console.log(data.name)
-                userDetails.innerHTML = `<h3>Name: ${data.name}</h3>`
+                userDetails.innerHTML += `<h3>Name: ${data.name}</h3>`
 
                 resultsRef = userRef.doc(data.id).collection('testResults') 
                 resultsRef.get()
@@ -31,7 +32,6 @@ document.addEventListener("DOMContentLoaded", event => {
                         })
                     })
 
-                //userDetails.innerHTML = `<h3>Name: ${data.name}</h3>`
 
             })
         })

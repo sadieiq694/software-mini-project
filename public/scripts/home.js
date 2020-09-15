@@ -39,19 +39,6 @@ function adminValidate() {
 	return false;
 }
 
-async function getUserID() {
-
-	return firebase.auth().onAuthStateChanged(function(user) {
-		if(user) {
-			console.log("A user is signed in!!")
-			// display other data for this user
-			return user.id;
-		} else {
-			console.log("No user signed in")
-			return "";
-		}
-	})
-}
 
 function onSymptomClick() {
 	// check if user already has results in the past 24 hrs
@@ -65,54 +52,27 @@ function onSymptomClick() {
 	var cur_time = d.getTime();
 	const one_day = 86400000; // number of seconds in the day
 
-	getUserID().then(id => {
-		console.log("Async test:", id);
-	});
 
 	if(window.cur_id != "") {
 		// get data for this person
-		var resultsRef = db.collection('users').doc(window.cur_id).collection("testResults");
-		resultsRef.get()
-			.then((snapshot) => {(snapshot.forEach(doc => {
-				console.log(doc.data())
-			}))})
+		console.log("GETTING TEST DATES FOR", window.cur_id)
+		const resultsRef = db.collection('users').doc(window.cur_id).collection("testResults");
+		const recentTests = resultsRef.where('date', '>', (cur_time-one_day)); // all tests within the past 24 hours
+		recentTests.get()
+			.then((snapshot) => {
+				if(snapshot.empty) {
+				console.log("NO RECENT TESTS");
+				location.href = "survey.html"
+				} else {
+					alert("You have already taken your survey today!!")
+				}
+			});
+
 	} else {
 		console.log("No user signed in")
 		alert("You are not signed in!")
+		location.href = "index.html"
 	}
-
-
-			// check for existence of document, if it doesnt exist then send to symptom page
-            /*userRef.get()
-                .then((docSnapshot) => {
-                    if(docSnapshot.exists) { // CHANGE TEST RESULTS TO SUBCOLLECTION!!!
-                        console.log("USER HAS TEST RESULTS!")
-						//userRef.collection('testResults')
-						console.log(docSnapshot.data)
-
-						const resultsRef = userRef.collection("testResults")
-						return resultsRef.get()
-							.then((snapshot) => {(snapshot.forEach(doc => {
-								//console.log(doc.id, '=>', doc.data());
-								var obj = doc.data()
-								console.log(obj)
-								if(obj.date > cur_time - one_day ) {
-									console.log("already took test today")
-									alert("already took test today!")
-								}
-								return obj;
-							}))});
-
-                        // HERE get all results, compare times to current time
-
-                        //userRef.update({test_results: cur_results})
-                    } else {
-                        console.log("USER HAS NEVER FILLED OUT A SURVEY!!!")
-                        //userRef.set({name: user.displayName, email: user.email, id: user.uid}) //, test_results: [cur_results]})
-                        //userRef.collection('testResults').add(cur_results)
-                    }
-				}*/
-
 
 	return false;
 }

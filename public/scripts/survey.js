@@ -64,6 +64,8 @@ function submitSurvey() {
 
     var cur_results = calcAnswers();
 
+    console.log("RESULTS: ", cur_results)
+
     ////////////////
 
     // PUT DATA INTO DATABASE ///////
@@ -94,8 +96,6 @@ function submitSurvey() {
                     }
                 });
 
-                location.href = 'home.html';
-
         } else {
             console.log("No user signed in") // cant add data!
             alert("No user signed in!")
@@ -103,7 +103,11 @@ function submitSurvey() {
         }
     })
 
+    //alert("Returning home :)")
+    //location.href = 'home.html';
+    //location.href = 'home.html'
 }
+
 
 /*function resetAnswer() {
     var answerbox = document.getElementById('answer');

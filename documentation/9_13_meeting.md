@@ -28,8 +28,9 @@
     * add compliance status
         * displayed on your homepage
         * number of symptoms, how recently you've been tested
-    * 1 survey per 24 hours
+    * 1 survey per 24 hours DONE
     * database rules
+    * reset button
     * go back to homepage when done with survey 
 * Hazim
     * Displaying COVID API data in some graphical format
