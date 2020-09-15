@@ -22,31 +22,17 @@ document.addEventListener("DOMContentLoaded", event => {
         } else {
             console.log("No user signed in")
         }
-    })
-
-
-
-    /*myPost.get()
-        .then(doc => {
-            const data = doc.data()
-            document.write(data.title + `<br>`)
-            console.log(data)
-        })*/
-
-    /*myPost.onSnapshot(doc => {
-        const data = doc.data();
-        console.log(data) 
-        document.querySelector('#title').innerHTML = data.title
-    })*/
-        
+    })  
 
 });
 
+//const submitButton = document.querySelector("#saveButton")
+//const resetButton = document.querySelector("#resetButton")
 
-function tabulateAnswers() {
-    console.log("TABULATING ANSWERS")
 
+function calcAnswers() {
     // GET RESULTS ///////////
+    console.log("CALCULATING ANSWERS")
     var yesScore = 0;
 
     // this is a list of all radio inputs on the page
@@ -56,7 +42,7 @@ function tabulateAnswers() {
     for(i=0; i < choices.length; i++) { // i think choices.length is 16??
         // if the radio button is checked
         if(choices[i].checked) {
-           if(choices[i].value === 'yes') {
+            if(choices[i].value === 'yes') {
                 yesScore = yesScore + 1;
             }
         }
@@ -69,6 +55,14 @@ function tabulateAnswers() {
 
     var cur_results = {date: d.getTime(), num_symptoms: yesScore}
     console.log(cur_results)
+    return cur_results
+}
+
+
+function submitSurvey() {
+    console.log("TABULATING ANSWERS")
+
+    var cur_results = calcAnswers();
 
     ////////////////
 
@@ -91,9 +85,8 @@ function tabulateAnswers() {
                 .then((docSnapshot) => {
                     if(docSnapshot.exists) { // CHANGE TEST RESULTS TO SUBCOLLECTION!!!
                         console.log("DOC EXISTS!")
-                        userRef.collection('testResults')
-                        .add(cur_results)
-                        //userRef.update({test_results: cur_results})
+                        userRef.collection('testResults').add(cur_results)
+                        userRef.update({test_results: cur_results})
                     } else {
                         console.log("DOC DOES NOT EXIST!!")
                         userRef.set({name: user.displayName, email: user.email, id: user.uid}) //, test_results: [cur_results]})
@@ -101,27 +94,14 @@ function tabulateAnswers() {
                     }
                 });
 
-            /*userRef.get()
-            .then((docSnapshot) => {
-                if(docSnapshot.exists) {
-                    userRef.onSnapshot((doc) => {
-                        // do stuff with data
-                        console.log("Data: ", doc.data())
-                        userRef.update({test_results: cur_results})
-                    });
-                } else {
-                    userRef.set({name: user.displayName, test_results: [cur_results]})
-                }
-            })*/
+                location.href = 'home.html';
 
         } else {
             console.log("No user signed in") // cant add data!
+            alert("No user signed in!")
+            location.href("index.html")
         }
     })
-
-    //mySymptomScreen.update({num_symptoms: yesScore})
-
-    document.getElementById('changeWhenDone').innerHTML = "SURVEY COMPLETE"
 
 }
 

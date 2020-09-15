@@ -12,7 +12,6 @@ function googleLogin(){
 	
 	.then(result => {
 		window.location.assign("home.html");
-		const user = result.user;
 		var user1 = firebase.auth().currentUser;
         console.log(user1.displayName)
 	//	document.write('Hello ' + user.displayName);

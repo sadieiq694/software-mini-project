@@ -18,12 +18,13 @@
   </head>
   <body>
 
-    <!-- Your custom JS file -->
-    <script type="text/javascript" src="scripts/home.js"></script>
-
     <h1>COVID-19 Attestation Homepage</h1>
 
+    <div id=userDetails></div>
+
     <A HREF="survey.html">Take Daily Symptom Survey</A>
+
+    <button id='surveyButton' onClick="onSymptomClick()">Take Daily Symptom Survey</button>
 
     <br><br><br>
 
@@ -44,6 +45,8 @@
     <!-- Firestore -->
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
 
+    <!-- Your custom JS file -->
+    <script type="text/javascript" src="scripts/home.js"></script>
     
 
   </body>
