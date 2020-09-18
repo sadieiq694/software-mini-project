@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+  
     <title>Home Page</title>
     
     <!-- update the version number as needed -->
@@ -17,6 +18,10 @@
 
   </head>
   <body>
+    <!-- Your custom JS file -->
+    <script src ="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="scripts/home.js"></script>
+    <script type="module" src= "scripts/Product.js"> </script>	
 
     <h1>COVID-19 Attestation Homepage</h1>
 
@@ -43,11 +48,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
 
     <!-- Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
-
-    <!-- Your custom JS file -->
-    <script type="text/javascript" src="scripts/home.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>    
 
   </body>
 </html>
