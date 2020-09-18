@@ -18,11 +18,7 @@ document.addEventListener("DOMContentLoaded", event => {
 			window.cur_id = ""
 		}
 	})
-	
-
 });
-
-
 
 function adminValidate() {
 	console.log("Validating:")

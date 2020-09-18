@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", event => {
 
     console.log(userDetails)
     userDetails.innerHTML = `<h2>Symptom Survey Results<h2>`
+    var table = `<table><tr><th>Date</th><th>Number of Symptoms</th></tr>`
+    
 
     userRef.get()
         .then(users => {
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", event => {
                 data = doc.data()
                 console.log(data.name)
                 userDetails.innerHTML += `<h3>Name: ${data.name}</h3>`
+                //table += 
 
                 resultsRef = userRef.doc(data.id).collection('testResults') 
                 resultsRef.get()
@@ -35,6 +38,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
             })
         })
+    table += `</table>`
 })
 
 
