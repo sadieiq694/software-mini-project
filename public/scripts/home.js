@@ -1,6 +1,5 @@
-// JS functions for home page
 const userDetails = document.querySelector("#userDetails")
-
+// JS functions for home page
 document.addEventListener("DOMContentLoaded", event => {
 	const app = firebase.app();
 	console.log(app)
@@ -16,6 +15,7 @@ document.addEventListener("DOMContentLoaded", event => {
 		} else {
 			console.log("No user signed in")
 			window.cur_id = ""
+			location.href = 'index.html';
 		}
 	})
 });

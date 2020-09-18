@@ -25,11 +25,15 @@
 
     <h1>COVID-19 Attestation Homepage</h1>
 
-    <div id=userDetails></div>
+    <div id=userDetails><p>Hello</p></div>
 
-    <A HREF="survey.html">Take Daily Symptom Survey</A>
+    <!--<A HREF="survey.html">Take Daily Symptom Survey</A>-->
 
     <button id='surveyButton' onClick="onSymptomClick()">Take Daily Symptom Survey</button>
+
+    <br><br>
+
+    <div id="like_button_container"></div>
 
     <br><br><br>
 
@@ -48,7 +52,14 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
 
     <!-- Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script> 
+    
+    <!--React Scripts-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    <!--React component-->
+    <script src="scripts/like_button.js"></script>
 
   </body>
 </html>
