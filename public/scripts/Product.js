@@ -39,11 +39,5 @@ var list = null;
 
 }	
 
-<<<<<<< HEAD
-
-
 
 export default Product
-=======
-export default Product
->>>>>>> d4276e973e50fc22127de7b23b1e6436062415f8

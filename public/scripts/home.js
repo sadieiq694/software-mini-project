@@ -1,8 +1,10 @@
-const userDetails = document.querySelector("#userDetails")
 // JS functions for home page
 document.addEventListener("DOMContentLoaded", event => {
 	const app = firebase.app();
 	console.log(app)
+
+	const userDetails = document.querySelector("#userDetails")
+
 
 	firebase.auth().onAuthStateChanged(function(user) {
 		if(user) {
@@ -18,6 +20,8 @@ document.addEventListener("DOMContentLoaded", event => {
 			location.href = 'index.html';
 		}
 	})
+
+	displayCovidData()
 });
 
 function adminValidate() {
@@ -76,41 +80,40 @@ function onSymptomClick() {
 function displayCovidData(){
 	//var axios = require('axios');
 
-var config = {
-  method: 'get',
-  url: 'https://api.covid19api.com/live/country/usa/status/confirmed',
-  headers: { }
-};
-var list = null;
+	var config = {
+	method: 'get',
+	url: 'https://api.covid19api.com/live/country/usa/status/confirmed',
+	headers: { }
+	};
+	var list = null;
 
- axios(config)
-.then(function (response) {
-        list = response.data[119];
-        console.log(list.Country);
-	console.log(list.Confirmed);
-	console.log(list.Deaths);
-	console.log(list.Province);
-	console.log(list.Recovered);
-	console.log(list.Active);
-        //i managed to get Mass. data onto the console log
-        //but I dont know how to print it out onto the webpage
-        var country = document.getElementById("country");
-        var confirmed = document.getElementById("confirmed");
-        var deaths = document.getElementById("deaths");
-        var province = document.getElementById("recovered");
-        var recovered = document.getElementById("recovered");
-        var active = document.getElementById("active");
-	country.innerHTML = 'Country: ' + list.Country;
-        confirmed.innerHTML = 'Confirmed Cases: ' + list.Confirmed;
-        deaths.innerHTML = 'Deaths: ' + list.Deaths;
-        province.innerHTML = 'State: ' + list.Province;
-        recovered.innerHTML = 'Recovered: ' + list.Recovered;
-        active.innerHTML = 'Active Cases: ' + list.Active;
+	axios(config)
+	.then(function (response) {
+			list = response.data[119];
+			console.log(list.Country);
+		console.log(list.Confirmed);
+		console.log(list.Deaths);
+		console.log(list.Province);
+		console.log(list.Recovered);
+		console.log(list.Active);
+
+		var country = document.getElementById("country");
+		var confirmed = document.getElementById("confirmed");
+		var deaths = document.getElementById("deaths");
+		var province = document.getElementById("recovered");
+		var recovered = document.getElementById("recovered");
+		var active = document.getElementById("active");
+		country.innerHTML = 'Country: ' + list.Country;
+		confirmed.innerHTML = 'Confirmed Cases: ' + list.Confirmed;
+		deaths.innerHTML = 'Deaths: ' + list.Deaths;
+		province.innerHTML = 'State: ' + list.Province;
+		recovered.innerHTML = 'Recovered: ' + list.Recovered;
+		active.innerHTML = 'Active Cases: ' + list.Active;
 
 
-})
-.catch(function (error) {
-  console.log(error);
-});
+	})
+	.catch(function (error) {
+	console.log(error);
+	});
 
 }

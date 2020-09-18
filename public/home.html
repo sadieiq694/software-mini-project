@@ -46,9 +46,13 @@
 
     <br><br>
 
-    <div id="like_button_container"></div>
+    <!--<div id="like_button_container"></div>-->
 
-    <br><br><br>
+    <br><br>
+    
+    <!--<button id='dispData' onclick="displayCovidData()">Display Regional COVID Data</button>-->
+    
+    <br>
 
 
     <form name="myform" action="" method="GET">Enter Admin Password:</form>
@@ -65,28 +69,23 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
 
     <!-- Firestore -->
-
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
     <!-- Axios API CDN link -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- Your custom JS file -->
-    <script type="text/javascript" src="scripts/home.js"></script>
     <div class = "covidData" src = "./scripts/home.js">
-	COVID-19 DATA 
-	<p id = "country"> </p>
-	<p id = "province"> </p>
-	<p id = "confirmed"> </p>
-	<p id = "active"> </p>
-	<p id = "recovered"> </p>
-	<p id = "deaths"> </p>
-	<script>
-		displayCovidData();
-	</script>
-
-    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>    
-
-
+      COVID-19 DATA 
+      <p id = "country"> </p>
+      <p id = "province"> </p>
+      <p id = "confirmed"> </p>
+      <p id = "active"> </p>
+      <p id = "recovered"> </p>
+      <p id = "deaths"> </p>
+    
+      <!--<script>displayCovidData();</script>-->
     </div>
+    <script type="text/javascript" src="scripts/home.js"></script>
+
   </body>
 </html>
