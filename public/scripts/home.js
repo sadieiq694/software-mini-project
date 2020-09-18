@@ -100,7 +100,7 @@ function displayCovidData(){
 		var country = document.getElementById("country");
 		var confirmed = document.getElementById("confirmed");
 		var deaths = document.getElementById("deaths");
-		var province = document.getElementById("recovered");
+		var province = document.getElementById("province");
 		var recovered = document.getElementById("recovered");
 		var active = document.getElementById("active");
 		country.innerHTML = 'Country: ' + list.Country;
