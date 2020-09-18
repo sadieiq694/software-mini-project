@@ -38,6 +38,7 @@ Over the course of this project, we have gained experience with the following:
         * To test: attempted to fill out survey twice in one day on a single account. An alert pops up and you are not redirected to the survey page. 
     * **Do not allow submission if all questions are not answered**
         * We tested this by attempting to submit an incompleted survey. An alert pops up and the results are not submitted, which we verified by confirming that there was no new entry in our database. 
+    * **Reset button**: We tested the reset button by selecting answers and then clicking the reset button. Accordingly, an alert pops up that notifies you that you have reset your answers and all of the radio buttons are deselected. 
 
 ## Remaining Tasks
 * **Formatting data on admin dashboard**: Ideally we would show 
@@ -46,9 +47,9 @@ Over the course of this project, we have gained experience with the following:
     * other community info
 * **Display personal data on homepage**
 * **Survey**:
-    * Reset button functionality
     * Return home once survey is submitted
 * **Add images of some of our unit tests to README**
+* **CSS** to improve overall look of the site
 
 ## Known issues
 * Since currently the survey does not navigate to home after you fill it out, users could repeatedly submit the survey as many times as they want on that page.

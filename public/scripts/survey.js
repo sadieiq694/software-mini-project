@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", event => {
 //const submitButton = document.querySelector("#saveButton")
 //const resetButton = document.querySelector("#resetButton")
 
+function resetAnswers() {
+    var choices = document.getElementsByTagName('input');
+    for(i=0; i < choices.length; i++) {
+        choices[i].checked = false; 
+    }
+    alert("Answers reset!")
+    console.log("answers reset")
+}
 
 function calcAnswers() {
     // GET RESULTS ///////////
@@ -124,7 +132,3 @@ function submitSurvey() {
 }
 
 
-/*function resetAnswer() {
-    var answerbox = document.getElementById('answer');
-    //answerbox.innerHTML = 'SOMETHING'
-}*/
