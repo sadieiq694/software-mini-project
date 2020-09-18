@@ -2,7 +2,7 @@
 Sadie Allen (sadiela@bu.edu) and Hazim Ab Halim (zimlim@bu.edu)
 
 #### Note:
-On occasion, we have issues with our firestore database *rules changing automatically. If you are unable to view or save data, please contact us so we can change the rules.
+On occasion, we have issues with our firestore database rules changing automatically. If you are unable to view or save data, please contact us so we can change the rules.
 
 ## Project Description
 
