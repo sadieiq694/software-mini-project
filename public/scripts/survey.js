@@ -34,6 +34,7 @@ function calcAnswers() {
     // GET RESULTS ///////////
     console.log("CALCULATING ANSWERS")
     var yesScore = 0;
+    var num_answers = 0;
 
     // this is a list of all radio inputs on the page
     var choices = document.getElementsByTagName('input');
@@ -42,6 +43,7 @@ function calcAnswers() {
     for(i=0; i < choices.length; i++) { // i think choices.length is 16??
         // if the radio button is checked
         if(choices[i].checked) {
+            num_anwers = num_answers + 1; // we need 8 of these
             if(choices[i].value === 'yes') {
                 yesScore = yesScore + 1;
             }
@@ -54,6 +56,12 @@ function calcAnswers() {
     console.log("DATE: ", d.getTime());
 
     var cur_results = {date: d.getTime(), num_symptoms: yesScore}
+
+    if(num_answers < 8) {
+        console.log("NOT ALL QUESTIONS WERE ANSWERED!")
+        var cur_results = {date: d.getTime(), num_symptoms: -1}; 
+    }
+
     console.log(cur_results)
     return cur_results
 }
@@ -63,6 +71,11 @@ function submitSurvey() {
     console.log("TABULATING ANSWERS")
 
     var cur_results = calcAnswers();
+
+    if (cur_results.num_symptoms == -1) {
+        alert("Please answer all questions!")
+    } 
+    else {
 
     console.log("RESULTS: ", cur_results)
 
@@ -102,6 +115,8 @@ function submitSurvey() {
             location.href("index.html")
         }
     })
+
+    }
 
     //alert("Returning home :)")
     //location.href = 'home.html';

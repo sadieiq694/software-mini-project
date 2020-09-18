@@ -1,5 +1,8 @@
 # Software Mini Project
-Sadie Allen and Hazim Ab Halim
+Sadie Allen (sadiela@bu.edu) and Hazim Ab Halim (zimlim@bu.edu)
+
+#### Note:
+On occasion, we have issues with our firestore database *rules changing automatically. If you are unable to view or save data, please contact us so we can change the rules.
 
 ## Project Description
 
@@ -7,7 +10,7 @@ For this software mini project, we have implemented a COVID-19 Attestation web a
 
 * **SSO login**: Secure login through Google
 * **Daily symptom tracker**: Users can fill out a survey once daily detailing their COVID-19 symptoms.
-* **User dashboard**: This is the home page of our application. It shows data specific to the user (past symptom survey results, compliance status) as well as regional COVID data from https://covid19api.com/.
+* **User dashboard**: This is the home page of our application. It shows data specific to the user (past symptom survey results, compliance status) as well as regional (Massachusetts) COVID data from https://covid19api.com/.
 * **Admin dashboard**: shows community data to privileged users. 
 
 We use Firebase to host our application. View it at https://covid-attestation.web.app/
@@ -33,6 +36,8 @@ Over the course of this project, we have gained experience with the following:
     * **Data saved to database**: To test if the data was being saved to the database, we fill out a survey and observe the database in the Firebase project dashboard. We observe that a new test result entry is added to the corresponding user's document each time that user fills out their survey. 
     * **Only one survey per day**:
         * To test: attempted to fill out survey twice in one day on a single account. An alert pops up and you are not redirected to the survey page. 
+    * **Do not allow submission if all questions are not answered**
+        * We tested this by attempting to submit an incompleted survey. An alert pops up and the results are not submitted, which we verified by confirming that there was no new entry in our database. 
 
 ## Remaining Tasks
 * **Formatting data on admin dashboard**: Ideally we would show 
@@ -41,7 +46,6 @@ Over the course of this project, we have gained experience with the following:
     * other community info
 * **Display personal data on homepage**
 * **Survey**:
-    * Do not allow submission if all questions are not answered
     * Reset button functionality
-* **Integrate API COVID data into homepage**
+    * Return home once survey is submitted
 * **Add images of some of our unit tests to README**
