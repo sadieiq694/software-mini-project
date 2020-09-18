@@ -1,19 +1,31 @@
 // JS functions for home page
 document.addEventListener("DOMContentLoaded", event => {
 	const app = firebase.app();
-	console.log(app)
+	const db = firebase.firestore();
 
-	const userDetails = document.querySelector("#userDetails")
+	console.log(app);
 
+	const userDetails = document.querySelector("#userDetails");
+	userDetails.innerHTML = "";
 
 	firebase.auth().onAuthStateChanged(function(user) {
 		if(user) {
 			console.log("A user is signed in!!")
-			console.log(user.displayName)
 			console.log(user.uid)
-			userDetails.innerHTML = `<h3>Hello ${user.displayName}</h3>`
+			userDetails.innerHTML += `<h3>Hello ${user.displayName}</h3><h4>Past test results:</h4>`
 			window.cur_id = user.uid;
 			// display other data for this user
+			// reference to their past tests
+			const userRef = db.collection('users').doc(user.uid).collection("testResults");
+			userRef.get()
+                    .then(res => {
+                        res.forEach(r => {
+                            survey_results = r.data();
+                            const milli_date = survey_results.date;
+                            var date = new Date(milli_date);
+                            userDetails.innerHTML += `<p>Date: ${date.toString().substring(0,16)}, # of symptoms: ${survey_results.num_symptoms}</p>`
+                        })
+                    })
 		} else {
 			console.log("No user signed in")
 			window.cur_id = ""
@@ -109,7 +121,6 @@ function displayCovidData(){
 		province.innerHTML = 'State: ' + list.Province;
 		recovered.innerHTML = 'Recovered: ' + list.Recovered;
 		active.innerHTML = 'Active Cases: ' + list.Active;
-
 
 	})
 	.catch(function (error) {

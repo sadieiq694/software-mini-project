@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
     console.log(userDetails)
     userDetails.innerHTML = `<h2>Symptom Survey Results<h2>`
-    var table = `<table><tr><th>Date</th><th>Number of Symptoms</th></tr>`
+    //var table = `<table><tr><th>Date</th><th>Number of Symptoms</th></tr>`
     
 
     userRef.get()

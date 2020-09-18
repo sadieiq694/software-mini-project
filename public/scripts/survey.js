@@ -51,7 +51,8 @@ function calcAnswers() {
     for(i=0; i < choices.length; i++) { // i think choices.length is 16??
         // if the radio button is checked
         if(choices[i].checked) {
-            num_anwers = num_answers + 1; // we need 8 of these
+            console.log("Checked!")
+            num_answers += 1; // we need 8 of these
             if(choices[i].value === 'yes') {
                 yesScore = yesScore + 1;
             }
@@ -60,6 +61,8 @@ function calcAnswers() {
 
     // now save data and yes score to data file
     console.log("Yes score: ", yesScore);
+    console.log("Number of answers: ", num_answers);
+
     var d = new Date();
     console.log("DATE: ", d.getTime());
 
