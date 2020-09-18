@@ -49,3 +49,6 @@ Over the course of this project, we have gained experience with the following:
     * Reset button functionality
     * Return home once survey is submitted
 * **Add images of some of our unit tests to README**
+
+## Known issues
+* Since currently the survey does not navigate to home after you fill it out, users could repeatedly submit the survey as many times as they want on that page.
