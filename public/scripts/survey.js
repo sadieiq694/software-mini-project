@@ -119,6 +119,7 @@ function submitSurvey() {
                         userRef.collection('testResults').add(cur_results)
                     }
                 });
+            //document.getElementById()
 
         } else {
             console.log("No user signed in") // cant add data!
